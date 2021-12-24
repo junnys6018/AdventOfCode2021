@@ -3,8 +3,9 @@ package day01
 import (
 	"fmt"
 	"os"
-	"strconv"
 	"strings"
+
+	"advent/util"
 )
 
 func Answer() {
@@ -16,7 +17,7 @@ func Answer() {
 	depthsStr := strings.Fields(string(content))
 	depthsInt := make([]int, len(depthsStr))
 	for i := range depthsStr {
-		depthsInt[i], _ = strconv.Atoi(depthsStr[i])
+		depthsInt[i] = util.ReadInt(depthsStr[i])
 	}
 
 	count := 0
