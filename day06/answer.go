@@ -3,19 +3,12 @@ package day06
 import (
 	"advent/util"
 	"fmt"
-	"os"
-	"strings"
 )
 
 func Answer() {
 	fish := make([]int, 9)
 
-	content, err := os.ReadFile("day06/input")
-	if err != nil {
-		panic(err)
-	}
-
-	counts := util.ListToInt(strings.Split(string(content), ","))
+	counts := util.ReadCommaSeperated("day06/input")
 
 	for _, v := range counts {
 		fish[v]++
