@@ -2,19 +2,12 @@ package day02
 
 import (
 	"fmt"
-	"os"
-	"strings"
 
 	"advent/util"
 )
 
 func Answer() {
-	content, err := os.ReadFile("day02/input")
-	if err != nil {
-		panic(err)
-	}
-
-	instructions := strings.Fields(string(content))
+	instructions := util.ReadTokens("day02/input")
 
 	horizontalPosition := 0
 	depth := 0

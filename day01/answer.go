@@ -2,19 +2,12 @@ package day01
 
 import (
 	"fmt"
-	"os"
-	"strings"
 
 	"advent/util"
 )
 
 func Answer() {
-	content, err := os.ReadFile("day01/input")
-	if err != nil {
-		panic(err)
-	}
-
-	depthsStr := strings.Fields(string(content))
+	depthsStr := util.ReadTokens("day01/input")
 	depthsInt := make([]int, len(depthsStr))
 	for i := range depthsStr {
 		depthsInt[i] = util.ReadInt(depthsStr[i])
