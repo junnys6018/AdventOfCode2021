@@ -1,31 +1,10 @@
 package day09
 
 import (
-	"bufio"
+	"advent/util"
 	"fmt"
-	"os"
 	"sort"
 )
-
-func parse(path string) (ret [][]int) {
-	file, err := os.Open(path)
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		line := scanner.Text()
-
-		arr := []int{}
-		for _, ch := range line {
-			arr = append(arr, int(ch)-int('0'))
-		}
-		ret = append(ret, arr)
-	}
-	return
-}
 
 func bound(v, max int) bool {
 	return v >= 0 && v < max
@@ -99,7 +78,7 @@ func basin(x, y int, floor [][]int) (size int) {
 }
 
 func Answer() {
-	floor := parse("day09/input")
+	floor := util.ReadGridInt("day09/input")
 	height := len(floor)
 	width := len(floor[0])
 

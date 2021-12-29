@@ -11,6 +11,7 @@ import (
 	"advent/day08"
 	"advent/day09"
 	"advent/day10"
+	"advent/day11"
 
 	"fmt"
 	"os"
@@ -44,6 +45,8 @@ func main() {
 		day09.Answer()
 	case 10:
 		day10.Answer()
+	case 11:
+		day11.Answer()
 	default:
 		fmt.Fprintf(os.Stderr, "Invalid day: %v\n", day)
 	}
